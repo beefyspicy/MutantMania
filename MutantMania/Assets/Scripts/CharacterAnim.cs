@@ -9,6 +9,10 @@ public class CharacterAnim : MonoBehaviour {
 
     static public bool attack;
 
+    public GameObject swordTrail;
+    public GameObject swordTrail2;
+    public GameObject swordTrail3;
+
     private Animator anim;
 
     void Start()
@@ -19,6 +23,8 @@ public class CharacterAnim : MonoBehaviour {
 
     void Update()
     {
+        //attack = false; ///////////
+
         int r = Random.Range(0, 2);
 
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
@@ -48,6 +54,21 @@ public class CharacterAnim : MonoBehaviour {
             {
                 attack = true;
                 anim.SetTrigger("attack");
+                time = startTime;
+                swordTrail.SetActive(true);
+                swordTrail2.SetActive(true);
+                swordTrail3.SetActive(true);
+            }
+            else
+            {
+                swordTrail.SetActive(false);
+                swordTrail2.SetActive(false);
+                swordTrail3.SetActive(false);
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                attack = true;
+                anim.SetTrigger("ninjaThrow");
                 time = startTime;
             }
         }

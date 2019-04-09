@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198495477553185570}
   - component: {fileID: 199312218368945838}
   m_Layer: 0
-  m_Name: LandFX
+  m_Name: JumpFX2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

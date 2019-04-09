@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public class FlyingEnemyController : MonoBehaviour
+{
 
     public float enemySpeed;
     public float time;
@@ -11,7 +12,7 @@ public class EnemyController : MonoBehaviour {
 
     private Rigidbody2D rb;
 
-    void Start ()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -21,7 +22,7 @@ public class EnemyController : MonoBehaviour {
     {
         rb.velocity = new Vector2(enemySpeed, rb.velocity.y);
 
-        if (EnemyAttack.attack)
+        if (FlyingEnemyAttack.flyingAttack)
         {
             anim.SetTrigger("enemyAttack");
         }
@@ -29,17 +30,5 @@ public class EnemyController : MonoBehaviour {
         {
             anim.SetBool("isIdle", true);
         }
-
-        /*if (FlyingEnemyAttack.flyingAttack)
-        {
-            if (time <= 0)
-            {
-                anim.SetTrigger("enemyAttack");
-            }
-            else
-            {
-                time -= Time.deltaTime;
-            }
-        }*/
     }
 }
