@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class ChestController : MonoBehaviour {
 
+    public GameObject ninjaStar;
     public GameObject chestfx;
 
     public Text chestText;
@@ -15,6 +16,8 @@ public class ChestController : MonoBehaviour {
     private void Start()
     {
         chestText.text = "";
+
+        ninjaStar.SetActive(false);
     }
 
     /*private void Update()
@@ -36,9 +39,15 @@ public class ChestController : MonoBehaviour {
             if (Input.GetKey(KeyCode.F))
             {
                 Debug.Log("chest opened");
-                chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
+                //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
+                chestText.text = "You have found a throwing star!";
                 newText = true;
+                ninjaStar.SetActive(true);
                 //Instantiate(chestfx, transform.position, transform.rotation);
+            }
+            else if (Input.GetKey(KeyCode.E))
+            {
+                SceneManager.LoadScene("Dungeon");
             }
         }
     }
