@@ -18,12 +18,12 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Escape))
+		if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button12))
         {
             Debug.Log("Quit");
             Application.Quit();
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Joystick1Button13))
         {
             SceneManager.LoadScene("MainScene");
         }

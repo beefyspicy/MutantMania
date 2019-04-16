@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float downForce;
     public float lowForce;
 
+    public static float moveHorizontal;
+
     public GameObject jumpfx;
     public GameObject jumpSpawn;
     //public GameObject sword;
@@ -31,12 +33,14 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(transform.up * downForce);
         }
-        else if (rb.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Space))
+        else if (rb.velocity.y > 0 && (!Input.GetKeyDown(KeyCode.Space) || !Input.GetKeyDown(KeyCode.Joystick1Button1)))
         {
             rb.AddForce(transform.up * lowForce);
         }
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        //float 
+        moveHorizontal = Input.GetAxis("Horizontal");
+
         rb.velocity = new Vector2(moveHorizontal * speed, rb.velocity.y);
 
         if (moveHorizontal < 0)
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && onGround == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button1)) && onGround == true)
         {
             onGround = false;
             rb.velocity = Vector2.up * jumpForce;

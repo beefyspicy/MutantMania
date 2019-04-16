@@ -8,6 +8,9 @@ TagManager:
   - Sword
   - EnemySword
   - Coin
+  - Detector
+  - Prevent
+  - Destructible
   layers:
   - Default
   - TransparentFX

@@ -27,7 +27,7 @@ public class CharacterAnim : MonoBehaviour {
 
         int r = Random.Range(0, 2);
 
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || PlayerController.moveHorizontal < 0 || PlayerController.moveHorizontal > 0)
         {
             anim.SetBool("isRunning", true);
         }
@@ -36,7 +36,7 @@ public class CharacterAnim : MonoBehaviour {
             anim.SetBool("isRunning", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             if(r == 0)
             {
@@ -50,7 +50,7 @@ public class CharacterAnim : MonoBehaviour {
 
         if (time <= 0)
         {
-            if(Input.GetKeyDown(KeyCode.Mouse0))
+            if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 attack = true;
                 anim.SetTrigger("attack");
@@ -65,7 +65,7 @@ public class CharacterAnim : MonoBehaviour {
                 swordTrail2.SetActive(false);
                 swordTrail3.SetActive(false);
             }
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Joystick1Button2))
             {
                 attack = true;
                 anim.SetTrigger("ninjaThrow");

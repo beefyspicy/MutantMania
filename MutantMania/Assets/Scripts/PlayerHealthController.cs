@@ -9,12 +9,13 @@ public class PlayerHealthController : MonoBehaviour {
     //bool isColliding;
 
     public GameObject bloodfx;
+    public GameObject player;
 
     private void Update()
     {
         if (health < 1)
         {
-            gameObject.SetActive(false);
+            player.gameObject.SetActive(false);
         }
 
         //isColliding = false;
@@ -28,6 +29,13 @@ public class PlayerHealthController : MonoBehaviour {
         {
             health -= 1;
             Instantiate(bloodfx, transform.position, transform.rotation);
+            Debug.Log(health);
+
+            ScreenShake.shake = true;
+        }
+        else
+        {
+            ScreenShake.shake = false;
         }
     }
 }
