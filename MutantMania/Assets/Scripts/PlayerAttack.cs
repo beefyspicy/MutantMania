@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
 
+    public static float score;
+
     public GameObject bloodfx;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,6 +15,7 @@ public class PlayerAttack : MonoBehaviour {
             //Instantiate(bloodfx, collision.transform.position, collision.transform.rotation);
             //HealthController.health -= 1;
             //ScreenShake.shake = true;
+            score += 5;
         }
 
         else if (collision.gameObject.CompareTag("Destructible") && CharacterAnim.attack == true)

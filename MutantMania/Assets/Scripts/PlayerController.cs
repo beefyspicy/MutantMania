@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button1)) && onGround == true)
         {
             onGround = false;
+
             rb.velocity = Vector2.up * jumpForce;
 
             var clone = jumpfx;

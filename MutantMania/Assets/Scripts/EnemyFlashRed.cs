@@ -19,7 +19,7 @@ public class EnemyFlashRed : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Sword")) //&& Input.GetKey(KeyCode.Mouse0)) //&& CharacterAnim.attack)
+        if (collision.gameObject.CompareTag("Sword")) //&& CharacterAnim.attack) //&& Input.GetKey(KeyCode.Mouse0)) //&& CharacterAnim.attack)
         {
             mmaterial.color = Color.red;
             //Debug.Log("enemyflash");

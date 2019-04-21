@@ -25,7 +25,7 @@ public class PlayerHealthController : MonoBehaviour {
     {
         //if (isColliding) return;
         //isColliding = true;
-        if (collision.gameObject.CompareTag("EnemySword")) //&& CharacterAnim.attack == true)
+        if (collision.gameObject.CompareTag("EnemySword") || collision.gameObject.CompareTag("Enemy"))//&& CharacterAnim.attack == true)
         {
             health -= 1;
             Instantiate(bloodfx, transform.position, transform.rotation);

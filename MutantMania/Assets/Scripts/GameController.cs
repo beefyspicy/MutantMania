@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button12))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button12))
         {
             Debug.Log("Quit");
             Application.Quit();
@@ -54,12 +54,19 @@ public class GameController : MonoBehaviour {
 
         //level up
         levelSlider.maxValue = 50;
-        levelSlider.value = (CoinPickup.coins * 2);
+        //levelSlider.value = (CoinPickup.coins * 2);
+        levelSlider.value = (PlayerAttack.score * 2);
+
         levelText.text = "Level " + level;
-        /*if (levelSlider.value > 49)
+        if (levelSlider.value > 49)
         {
-            levelSlider.value = 0;
-            level++;
-        }*/
+            //levelUp = true;
+            //if (levelUp)
+            //{
+                levelSlider.value = 0;
+                //level++;
+                //levelUp = false;
+            //}
+        }
     }
 }

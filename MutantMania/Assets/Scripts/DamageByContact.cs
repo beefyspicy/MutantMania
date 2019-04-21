@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DamageByContact : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
