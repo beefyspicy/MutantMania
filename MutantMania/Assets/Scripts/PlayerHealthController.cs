@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour {
 
-    public float health;
+    public static float health = 5;
 
     //bool isColliding;
 

@@ -65,7 +65,7 @@ public class CharacterAnim : MonoBehaviour {
                 swordTrail2.SetActive(false);
                 swordTrail3.SetActive(false);
             }
-            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Joystick1Button2))
+            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Joystick1Button2))  // && ChestController.ninjaStar.activeSelf)
             {
                 attack = true;
                 anim.SetTrigger("ninjaThrow");

@@ -18,6 +18,7 @@ public class ScreenShake : MonoBehaviour {
         if(shake)
         {
             anim.SetTrigger("shake");
+            //anim.SetBool("shake", true);
         }
         else
         {

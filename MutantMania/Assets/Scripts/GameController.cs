@@ -6,7 +6,17 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
+    float level;
+
+    bool levelUp;
+
     public Text deathText;
+    public Text coinText;
+    public Text levelText;
+
+    public Slider healthSlider;
+    public Slider levelSlider;
+
     public GameObject player;
 
 	// Use this for initialization
@@ -28,9 +38,28 @@ public class GameController : MonoBehaviour {
             SceneManager.LoadScene("MainScene");
         }
 
+        //death
         if (!player.activeSelf)
         {
             deathText.text = "Press [R] to restart or [ESC] to quit";
         }
+
+
+        //score
+        coinText.text = "Coins: " + CoinPickup.coins;
+
+        //health slider
+        healthSlider.maxValue = 5;
+        healthSlider.value = PlayerHealthController.health;
+
+        //level up
+        levelSlider.maxValue = 50;
+        levelSlider.value = (CoinPickup.coins * 2);
+        levelText.text = "Level " + level;
+        /*if (levelSlider.value > 49)
+        {
+            levelSlider.value = 0;
+            level++;
+        }*/
     }
 }

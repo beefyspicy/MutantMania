@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoinPickup : MonoBehaviour {
+
+    public static float coins;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,6 +14,7 @@ public class CoinPickup : MonoBehaviour {
             collision.gameObject.SetActive(false);
 
             //add to player score
+            coins += 5;
         }
     }
 }

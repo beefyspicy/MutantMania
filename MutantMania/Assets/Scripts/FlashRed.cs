@@ -19,7 +19,7 @@ public class FlashRed : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("EnemySword"))
+        if (collision.gameObject.CompareTag("EnemySword") || collision.gameObject.CompareTag("Enemy"))
         {
             mmaterial.color = Color.red;
             //Debug.Log("flash");
