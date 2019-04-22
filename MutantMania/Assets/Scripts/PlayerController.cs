@@ -66,20 +66,5 @@ public class PlayerController : MonoBehaviour
             Instantiate(clone, jumpSpawn.transform.position, jumpSpawn.transform.rotation);
             //Destroy(clone, 2f);
         }
-
-        /*if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            sword.SetActive(true);
-        }
-        else
-        {
-            //StartCoroutine(Wait());
-            sword.SetActive(false);
-        }*/
     }
-
-    /*IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(4f);
-    }*/
 }

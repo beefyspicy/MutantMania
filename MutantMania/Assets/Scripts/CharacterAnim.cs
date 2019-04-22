@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CharacterAnim : MonoBehaviour {
 
+    //public static float mana = 10;
+
     private float time;
     public float startTime;
 
@@ -14,6 +16,8 @@ public class CharacterAnim : MonoBehaviour {
     public GameObject swordTrail3;
 
     private Animator anim;
+
+    //Rigidbody2D rb;
 
     void Start()
     {
@@ -70,6 +74,11 @@ public class CharacterAnim : MonoBehaviour {
                 attack = true;
                 anim.SetTrigger("ninjaThrow");
                 time = startTime;
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse2))
+            {
+                anim.SetTrigger("wandAttack");
+                //mana--;
             }
         }
         else

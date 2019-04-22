@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
     public Text levelText;
 
     public Slider healthSlider;
+    public Slider magicSlider;
     public Slider levelSlider;
 
     public GameObject player;
@@ -51,6 +52,11 @@ public class GameController : MonoBehaviour {
         //health slider
         healthSlider.maxValue = 5;
         healthSlider.value = PlayerHealthController.health;
+
+
+        //magic slider
+        magicSlider.maxValue = 10;
+        magicSlider.value = WandAttack.mana;
 
         //level up
         levelSlider.maxValue = 50;
