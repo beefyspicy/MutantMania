@@ -65,6 +65,7 @@ public class CharacterAnim : MonoBehaviour {
             }
             else
             {
+                attack = false;
                 swordTrail.SetActive(false);
                 swordTrail2.SetActive(false);
                 swordTrail3.SetActive(false);

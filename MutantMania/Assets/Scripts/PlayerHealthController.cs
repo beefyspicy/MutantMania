@@ -33,6 +33,19 @@ public class PlayerHealthController : MonoBehaviour {
 
             ScreenShake.shake = true;
         }
+        else if (collision.gameObject.CompareTag("ChaseMonster"))
+        {
+            health -= 10;
+            Instantiate(bloodfx, transform.position, transform.rotation);
+            Debug.Log(health);
+
+            ScreenShake.shake = true;
+        }
+        else if (collision.gameObject.CompareTag("HealthBottle"))
+        {
+            collision.gameObject.SetActive(false);
+            health += 3;
+        }
         else
         {
             ScreenShake.shake = false;

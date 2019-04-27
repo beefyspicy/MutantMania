@@ -524,6 +524,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 1724717890525798}
+  manaBottle: {fileID: 1130033179543254, guid: 8d05776578bbaa7499c559d9725c8211, type: 2}
+  healthBottle: {fileID: 1026523669452312, guid: 1e6d7c801e343d74f9a756cc28d6df36,
+    type: 2}
   p1: {fileID: 1781699062050928}
   p2: {fileID: 1368135835102360}
   p3: {fileID: 1892908318672706}

@@ -11,6 +11,9 @@ TagManager:
   - Detector
   - Prevent
   - Destructible
+  - Mana
+  - ChaseMonster
+  - HealthBottle
   layers:
   - Default
   - TransparentFX

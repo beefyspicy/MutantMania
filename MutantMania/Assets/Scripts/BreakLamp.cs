@@ -25,7 +25,7 @@ public class BreakLamp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Sword"))
+        if (collision.gameObject.CompareTag("Sword") && CharacterAnim.attack)
         {
             lamp.SetActive(false);
 
@@ -39,7 +39,7 @@ public class BreakLamp : MonoBehaviour
             Rigidbody2D rb2 = p2.GetComponent<Rigidbody2D>();
             Rigidbody2D rb3 = p3.GetComponent<Rigidbody2D>();
 
-            rb.AddForce(transform.up * r);
+            rb.AddForce(transform.up * (r * .6f));
             rb2.AddForce(transform.right * (r * .6f));
             rb3.AddForce(transform.right * (-r * .6f));
 
@@ -48,6 +48,25 @@ public class BreakLamp : MonoBehaviour
             Destroy(p3, 2f);
             Destroy(p4, 2f);
             Destroy(p5, 2f);*/
+        }
+
+        else if (collision.gameObject.CompareTag("ChaseMonster"))
+        {
+            lamp.SetActive(false);
+
+            p1.SetActive(true);
+            p2.SetActive(true);
+            p3.SetActive(true);
+
+            //rb.AddForce(transform.forward * r);
+
+            Rigidbody2D rb = p1.GetComponent<Rigidbody2D>();
+            Rigidbody2D rb2 = p2.GetComponent<Rigidbody2D>();
+            Rigidbody2D rb3 = p3.GetComponent<Rigidbody2D>();
+
+            rb.AddForce(transform.up * (r * .6f));
+            rb2.AddForce(transform.right * (r * .6f));
+            rb3.AddForce(transform.right * (-r * .6f));
         }
     }
 }

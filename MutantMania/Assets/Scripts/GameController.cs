@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour {
 
     float level;
 
+    //public static float mana;
+
     bool levelUp;
 
     public Text deathText;
@@ -50,13 +52,15 @@ public class GameController : MonoBehaviour {
         coinText.text = "Coins: " + CoinPickup.coins;
 
         //health slider
-        healthSlider.maxValue = 5;
+        healthSlider.maxValue = 5;  //does not actually cap the maximum value for some reason
         healthSlider.value = PlayerHealthController.health;
 
 
         //magic slider
         magicSlider.maxValue = 10;
         magicSlider.value = WandAttack.mana;
+        magicSlider.value += CoinPickup.mana;
+        //mana += CoinPickup.mana;
 
         //level up
         levelSlider.maxValue = 50;

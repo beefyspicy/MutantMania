@@ -5,17 +5,25 @@ using UnityEngine;
 public class WandAttack : MonoBehaviour {
 
     public float force;
-    public static float mana = 10;
+    public static float mana;
 
     public GameObject wandProjectile;
     public GameObject projectileSpawn;
+
+    private void Start()
+    {
+        mana = 10;
+    }
 
     void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Mouse2))
         {
             shootWand();
+            Debug.Log(mana);
         }
+
+        //mana += GameController.mana;
 	}
 
     void shootWand()
