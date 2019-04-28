@@ -5,6 +5,7 @@ using UnityEngine;
 public class LittleBugController : MonoBehaviour {
 
     public float speed;
+    //float step;
 
     public GameObject player;
     public GameObject bloodfx;
@@ -23,4 +24,10 @@ public class LittleBugController : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
+
+    /*private void OnTriggerStay2D(Collider2D collision)
+    {
+        float step = speed * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, step);
+    }*/
 }

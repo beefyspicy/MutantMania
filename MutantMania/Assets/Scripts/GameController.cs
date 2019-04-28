@@ -54,6 +54,10 @@ public class GameController : MonoBehaviour {
         //health slider
         healthSlider.maxValue = 5;  //does not actually cap the maximum value for some reason
         healthSlider.value = PlayerHealthController.health;
+        /*if (healthSlider.value > 5)
+        {
+            healthSlider.value = 5;
+        }*/
 
 
         //magic slider

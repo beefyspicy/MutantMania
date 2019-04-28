@@ -26,7 +26,8 @@ public class BreakBarrel : MonoBehaviour
     private void Update()
     {
         r = Random.Range(300, 700);
-        rand = Random.Range(0, 4);
+        //rand = Random.Range(0, 4);
+        rand = Random.Range(0, 7);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
