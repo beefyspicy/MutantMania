@@ -14,6 +14,7 @@ TagManager:
   - Mana
   - ChaseMonster
   - HealthBottle
+  - Lava
   layers:
   - Default
   - TransparentFX

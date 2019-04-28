@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class ChestController : MonoBehaviour {
 
+    float rand;
+
     public GameObject ninjaStar;
+    public GameObject helmet;
+    public GameObject cuirass;
     public GameObject chestfx;
 
     public Text chestText;
@@ -20,34 +24,74 @@ public class ChestController : MonoBehaviour {
         ninjaStar.SetActive(false);
     }
 
-    /*private void Update()
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.F))
-        {
-            Debug.Log("chest opened");
-        }
-    }*/
+        rand = Random.Range(0, 3);
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if(!newText)
+            if(rand == 0)
             {
-                chestText.text = "[F] to open chest";
+                if (!newText)
+                {
+                    chestText.text = "[F] to open chest";
+                }
+                if (Input.GetKey(KeyCode.F))
+                {
+                    Debug.Log("chest opened");
+                    //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
+                    chestText.text = "You have found a throwing star!";
+                    newText = true;
+                    ninjaStar.SetActive(true);
+                    //Instantiate(chestfx, transform.position, transform.rotation);
+                }
+                else if (Input.GetKey(KeyCode.E))
+                {
+                    SceneManager.LoadScene("Dungeon");
+                }
             }
-            if (Input.GetKey(KeyCode.F))
+            if (rand == 1)
             {
-                Debug.Log("chest opened");
-                //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
-                chestText.text = "You have found a throwing star!";
-                newText = true;
-                ninjaStar.SetActive(true);
-                //Instantiate(chestfx, transform.position, transform.rotation);
+                if (!newText)
+                {
+                    chestText.text = "[F] to open chest";
+                }
+                if (Input.GetKey(KeyCode.F))
+                {
+                    Debug.Log("chest opened");
+                    //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
+                    chestText.text = "You have found a helmet!";
+                    newText = true;
+                    helmet.SetActive(true);
+                    //Instantiate(chestfx, transform.position, transform.rotation);
+                }
+                else if (Input.GetKey(KeyCode.E))
+                {
+                    SceneManager.LoadScene("Dungeon");
+                }
             }
-            else if (Input.GetKey(KeyCode.E))
+            if (rand == 2)
             {
-                SceneManager.LoadScene("Dungeon");
+                if (!newText)
+                {
+                    chestText.text = "[F] to open chest";
+                }
+                if (Input.GetKey(KeyCode.F))
+                {
+                    Debug.Log("chest opened");
+                    //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
+                    chestText.text = "You have found a cuirass!";
+                    newText = true;
+                    cuirass.SetActive(true);
+                    //Instantiate(chestfx, transform.position, transform.rotation);
+                }
+                else if (Input.GetKey(KeyCode.E))
+                {
+                    SceneManager.LoadScene("Dungeon");
+                }
             }
         }
     }
