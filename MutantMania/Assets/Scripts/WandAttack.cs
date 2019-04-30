@@ -17,10 +17,14 @@ public class WandAttack : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse2))
+        if (Input.GetKeyDown(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
-            shootWand();
-            Debug.Log(mana);
+            if(mana > 0)
+            {
+                shootWand();
+                Debug.Log(mana);
+            }
+
         }
 
         //mana += GameController.mana;

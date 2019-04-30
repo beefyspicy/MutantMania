@@ -819,9 +819,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Mutant
+  m_Text: 'MUTANT
 
-    Mania'
+    MANIA'
 --- !u!222 &1239098749
 CanvasRenderer:
   m_ObjectHideFlags: 0

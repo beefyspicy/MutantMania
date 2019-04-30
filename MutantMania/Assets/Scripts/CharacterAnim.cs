@@ -76,7 +76,7 @@ public class CharacterAnim : MonoBehaviour {
                 anim.SetTrigger("ninjaThrow");
                 time = startTime;
             }
-            if (Input.GetKeyDown(KeyCode.Mouse2))
+            if (Input.GetKeyDown(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.Joystick1Button3))
             {
                 anim.SetTrigger("wandAttack");
                 //mana--;
