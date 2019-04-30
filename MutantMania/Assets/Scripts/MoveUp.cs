@@ -14,7 +14,11 @@ public class MoveUp : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector2(enemySpeed, rb.velocity.x);
+        if (MoveUpChecker.moveUp)
+        {
+            rb.velocity = Vector2.up * enemySpeed;
+        }
+        
         //rb.velocity = new Vector2(enemySpeed, rb.velocity.y);
     }
 }

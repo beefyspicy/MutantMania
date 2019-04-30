@@ -41,6 +41,10 @@ public class GameController : MonoBehaviour {
         {
             SceneManager.LoadScene("ForestMap");
         }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button9))
+        {
+            SceneManager.LoadScene("MenuFinal");
+        }
 
         //death
         if (!player.activeSelf)
