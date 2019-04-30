@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour {
 	void Start ()
     {
         deathText.text = "";
+        PlayerHealthController.health = 5;
     }
 	
 	// Update is called once per frame
@@ -38,7 +39,7 @@ public class GameController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Joystick1Button13))
         {
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("ForestMap");
         }
 
         //death
