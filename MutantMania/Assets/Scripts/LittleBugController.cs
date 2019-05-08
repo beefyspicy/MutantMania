@@ -10,6 +10,14 @@ public class LittleBugController : MonoBehaviour {
     public GameObject player;
     public GameObject bloodfx;
 
+    //AudioSource audioSource;
+    //public AudioClip squish;
+
+    private void Start()
+    {
+        //audioSource = GetComponent<AudioSource>();
+    }
+
     void Update ()
     {
         float step = speed * Time.deltaTime;
@@ -20,6 +28,9 @@ public class LittleBugController : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("ChaseMonster") || collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Sword"))
         {
+            AudioManager.playSquish = true;
+            //audioSource.PlayOneShot(squish, .7f);
+            //Debug.Log("playsound");
             Instantiate(bloodfx, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }

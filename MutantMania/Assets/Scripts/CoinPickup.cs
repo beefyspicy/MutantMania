@@ -13,6 +13,8 @@ public class CoinPickup : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Coin"))
         {
+            AudioManager.playCoin = true;
+
             collision.gameObject.SetActive(false);
 
             //add to player score
@@ -21,6 +23,8 @@ public class CoinPickup : MonoBehaviour {
 
         if (collision.gameObject.CompareTag("Mana"))
         {
+            AudioManager.playMana = true;
+
             collision.gameObject.SetActive(false);
 
             //add to player score

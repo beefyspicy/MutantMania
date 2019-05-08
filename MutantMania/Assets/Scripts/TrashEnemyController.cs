@@ -10,6 +10,8 @@ public class TrashEnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ChaseMonster") || collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Sword"))
         {
+            AudioManager.playSquish = true;
+
             Instantiate(trashfx, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }

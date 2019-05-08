@@ -15,6 +15,8 @@ public class PlayerHealthController : MonoBehaviour {
     {
         if (health < 1)
         {
+            AudioManager.playDeath = true;
+
             player.gameObject.SetActive(false);
         }
 
@@ -27,6 +29,8 @@ public class PlayerHealthController : MonoBehaviour {
         //isColliding = true;
         if (collision.gameObject.CompareTag("EnemySword") || collision.gameObject.CompareTag("Enemy"))//&& CharacterAnim.attack == true)
         {
+            AudioManager.playHurt = true;
+
             health -= 1;
             Instantiate(bloodfx, transform.position, transform.rotation);
             Debug.Log(health);
@@ -51,6 +55,8 @@ public class PlayerHealthController : MonoBehaviour {
         }
         else if (collision.gameObject.CompareTag("HealthBottle"))
         {
+            AudioManager.playHealth = true;
+
             collision.gameObject.SetActive(false);
             health += 3;
         }

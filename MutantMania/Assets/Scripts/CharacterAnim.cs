@@ -56,6 +56,8 @@ public class CharacterAnim : MonoBehaviour {
         {
             if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
+                AudioManager.playSword = true;
+
                 attack = true;
                 anim.SetTrigger("attack");
                 time = startTime;

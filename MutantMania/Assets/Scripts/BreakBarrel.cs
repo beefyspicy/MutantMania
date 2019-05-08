@@ -34,6 +34,8 @@ public class BreakBarrel : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Sword") && CharacterAnim.attack)
         {
+            AudioManager.playBarrel = true;
+
             barrel.SetActive(false);
 
             p1.SetActive(true);

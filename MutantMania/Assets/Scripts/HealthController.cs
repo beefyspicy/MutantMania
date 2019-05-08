@@ -23,6 +23,7 @@ public class HealthController : MonoBehaviour {
     {
         if(health < 1)
         {
+            //spawn coins
             int r = Random.Range(990, 1000);
             int coinNumber = Random.Range(2, 4);
 
@@ -46,6 +47,9 @@ public class HealthController : MonoBehaviour {
                     rb.AddForce(transform.right * -r);
                 }
             }
+
+            //play sound
+            AudioManager.playEnemySquish = true;
 
             gameObject.SetActive(false);
         }
