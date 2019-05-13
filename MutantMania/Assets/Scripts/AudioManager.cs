@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour {
 
     public static bool playSquish;
     public static bool playEnemySquish;
+    public static bool playEnemyHit;
     public static bool playJump;
     public static bool playCoin;
     public static bool playBarrel;
@@ -16,8 +17,10 @@ public class AudioManager : MonoBehaviour {
     public static bool playSword;
 
     AudioSource audioSource;
+    public AudioClip bgm;
     public AudioClip squish;
     public AudioClip enemySquish;
+    public AudioClip enemyHit;
     public AudioClip jump1;
     public AudioClip coin;
     public AudioClip barrel;
@@ -31,11 +34,15 @@ public class AudioManager : MonoBehaviour {
 
     void Start ()
     {
+        //DontDestroyOnLoad(gameObject);
+
         audioSource = GetComponent<AudioSource>();
         //playSquish = false;
-	}
-	
-	void Update ()
+
+        audioSource.PlayOneShot(bgm, .18f);
+    }
+
+    void Update ()
     {
         int r = Random.Range(0, 3);
 
@@ -49,6 +56,12 @@ public class AudioManager : MonoBehaviour {
         {
             audioSource.PlayOneShot(enemySquish, .7f);
             playEnemySquish = false;
+        }
+
+        if (playEnemyHit)
+        {
+            audioSource.PlayOneShot(enemyHit, .7f);
+            playEnemyHit = false;
         }
 
         if (playJump)

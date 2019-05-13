@@ -29,7 +29,7 @@ public class CharacterAnim : MonoBehaviour {
     {
         //attack = false; ///////////
 
-        int r = Random.Range(0, 2);
+        int r = Random.Range(0, 5);
 
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || PlayerController.moveHorizontal < 0 || PlayerController.moveHorizontal > 0)
         {
@@ -42,11 +42,11 @@ public class CharacterAnim : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
-            if(r == 0)
+            if(r == 0 || r == 1 || r == 3)
             {
                 anim.SetTrigger("jump");
             }
-            else if(r == 1)
+            else if(r == 4)
             {
                 anim.SetTrigger("jump2");
             }

@@ -59,6 +59,8 @@ public class HealthController : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Sword") && CharacterAnim.attack == true)
         {
+            AudioManager.playEnemyHit = true;
+
             Instantiate(bloodfx, transform.position, transform.rotation);
             ScreenShake.shake = true;
             Debug.Log("shake = true");

@@ -25,6 +25,8 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        CoinPickup.coins = 0;
+
         deathText.text = "";
         PlayerHealthController.health = 5;
     }
