@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CoinPickup : MonoBehaviour {
 
     public static float coins;
-    public static float mana;
+    //public static float mana;
     public static float health;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +28,8 @@ public class CoinPickup : MonoBehaviour {
             collision.gameObject.SetActive(false);
 
             //add to player score
-            mana += 3;
+            //mana = 10;
+            WandAttack.mana = 10;
         }
 
         /*if (collision.gameObject.CompareTag("HealthBottle"))

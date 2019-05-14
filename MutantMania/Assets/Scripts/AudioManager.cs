@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour {
     public static bool playMana;
     public static bool playHealth;
     public static bool playSword;
+    public static bool playWand;
 
     AudioSource audioSource;
     public AudioClip bgm;
@@ -31,6 +32,7 @@ public class AudioManager : MonoBehaviour {
     public AudioClip swordSwing;
     public AudioClip swordSwing2;
     public AudioClip swordSwing3;
+    public AudioClip wand;
 
     void Start ()
     {
@@ -123,6 +125,12 @@ public class AudioManager : MonoBehaviour {
                 audioSource.PlayOneShot(swordSwing3, .7f);
                 playSword = false;
             }
+        }
+
+        if (playWand)
+        {
+            audioSource.PlayOneShot(wand, .5f);
+            playWand = false;
         }
     }
 }

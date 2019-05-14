@@ -22,9 +22,9 @@ public class WandAttack : MonoBehaviour {
             if(mana > 0)
             {
                 shootWand();
+                //StartCoroutine("wandWait");
                 Debug.Log(mana);
             }
-
         }
 
         //mana += GameController.mana;
@@ -32,10 +32,16 @@ public class WandAttack : MonoBehaviour {
 
     void shootWand()
     {
+        AudioManager.playWand = true;
         GameObject magic = Instantiate(wandProjectile, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
         Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * force, ForceMode2D.Impulse);
         rb.AddForce(transform.up * (force * .04f), ForceMode2D.Impulse);
         mana--;
     }
+
+    /*IEnumerator wandWait()
+    {
+        yield return new WaitForSeconds(.5f);
+    }*/
 }

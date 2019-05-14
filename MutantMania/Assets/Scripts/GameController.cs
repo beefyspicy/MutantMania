@@ -28,20 +28,27 @@ public class GameController : MonoBehaviour {
         CoinPickup.coins = 0;
 
         deathText.text = "";
-        PlayerHealthController.health = 5;
+        PlayerHealthController.health = 8;
+
+        PlayerAttack.score = 0; //or leave it so it accumulates ?
+
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button12))
         {
             Debug.Log("Quit");
-            Application.Quit();
+            TransitionAnimForest.forestTran = true;
+            StartCoroutine("quit");
+            //Application.Quit();
         }
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Joystick1Button13))
         {
-            SceneManager.LoadScene("ForestMap");
+            TransitionAnimForest.forestTran = true;
+            StartCoroutine("respawn");
+            //SceneManager.LoadScene("ForestMap");
         }
         if (Input.GetKeyDown(KeyCode.Joystick1Button9))
         {
@@ -59,7 +66,7 @@ public class GameController : MonoBehaviour {
         coinText.text = "Coins: " + CoinPickup.coins;
 
         //health slider
-        healthSlider.maxValue = 5;  //does not actually cap the maximum value for some reason
+        healthSlider.maxValue = 8;  //does not actually cap the maximum value for some reason
         healthSlider.value = PlayerHealthController.health;
         /*if (healthSlider.value > 5)
         {
@@ -70,24 +77,47 @@ public class GameController : MonoBehaviour {
         //magic slider
         magicSlider.maxValue = 10;
         magicSlider.value = WandAttack.mana;
-        magicSlider.value += CoinPickup.mana;
+        //magicSlider.value += CoinPickup.mana;
         //mana += CoinPickup.mana;
 
         //level up
-        levelSlider.maxValue = 50;
+        levelSlider.maxValue = 300;
         //levelSlider.value = (CoinPickup.coins * 2);
         levelSlider.value = (PlayerAttack.score * 2);
 
         levelText.text = "Level " + level;
-        if (levelSlider.value > 49)
+        if (levelSlider.value < 50)
         {
-            //levelUp = true;
-            //if (levelUp)
-            //{
-                levelSlider.value = 0;
-                //level++;
-                //levelUp = false;
-            //}
+            level = 1;
         }
+        else if (levelSlider.value >= 50 && levelSlider.value < 125)
+        {
+            level = 2;
+        }
+        else if (levelSlider.value >= 125 && levelSlider.value < 200)
+        {
+            level = 3;
+        }
+        else if (levelSlider.value >= 200 && levelSlider.value < 300)
+        {
+            level = 4;
+        }
+        else if (levelSlider.value >= 300)
+        {
+            level = 5;
+        }
+    }
+
+    IEnumerator respawn()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("ForestMap");
+    }
+
+    IEnumerator quit()
+    {
+        yield return new WaitForSeconds(1f);
+        Application.Quit();
+        //SceneManager.LoadScene("MenuFinal");
     }
 }

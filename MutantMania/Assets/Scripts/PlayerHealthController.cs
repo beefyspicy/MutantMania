@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour {
 
-    public static float health = 5;
+    public static float health = 8;
 
     //bool isColliding;
 
@@ -58,7 +58,7 @@ public class PlayerHealthController : MonoBehaviour {
             AudioManager.playHealth = true;
 
             collision.gameObject.SetActive(false);
-            health += 3;
+            health = 8;
         }
         else
         {

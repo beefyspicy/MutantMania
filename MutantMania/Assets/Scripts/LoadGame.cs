@@ -5,15 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class LoadGame : MonoBehaviour
 {
-	void Update ()
+    void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
-            SceneManager.LoadScene("ForestMap");
+            TransitionAnim.tran = true;
+            StartCoroutine("loadGame");
+            //SceneManager.LoadScene("ForestMap");
         }
         if (Input.GetKeyDown(KeyCode.Joystick1Button8))
         {
             SceneManager.LoadScene("TownMap");
         }
+    }
+
+    IEnumerator loadGame()
+    {
+        MenuMusicFade.musicFade = true;
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("ForestMap");
     }
 }

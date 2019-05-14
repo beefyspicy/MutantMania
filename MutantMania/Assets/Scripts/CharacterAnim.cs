@@ -29,7 +29,7 @@ public class CharacterAnim : MonoBehaviour {
     {
         //attack = false; ///////////
 
-        int r = Random.Range(0, 5);
+        //int r = Random.Range(0, 5);
 
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || PlayerController.moveHorizontal < 0 || PlayerController.moveHorizontal > 0)
         {
@@ -42,14 +42,16 @@ public class CharacterAnim : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
-            if(r == 0 || r == 1 || r == 3)
+            anim.SetTrigger("jump");
+
+            /*if (r == 0 || r == 1 || r == 3)
             {
                 anim.SetTrigger("jump");
             }
-            else if(r == 4)
+            else if (r == 4)
             {
                 anim.SetTrigger("jump2");
-            }
+            }*/
         }
 
         if (time <= 0)
@@ -81,6 +83,7 @@ public class CharacterAnim : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.Joystick1Button3))
             {
                 anim.SetTrigger("wandAttack");
+                //StartCoroutine("wandHold");
                 //mana--;
             }
         }
@@ -89,4 +92,9 @@ public class CharacterAnim : MonoBehaviour {
             time -= Time.deltaTime;
         }
     }
+
+    /*IEnumerator wandHold()
+    {
+        yield return new WaitForSeconds(.5f);
+    }*/
 }
