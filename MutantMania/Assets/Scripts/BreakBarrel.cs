@@ -66,8 +66,11 @@ public class BreakBarrel : MonoBehaviour
                 rb = mana.GetComponent<Rigidbody2D>();
 
                 rb.AddForce(transform.up * (r * .6f));
+
+                //gameObject.SetActive(false);                          //////////////////////////////////
+                StartCoroutine("SetActiveFalse");
             }
-            if (rand == 1)
+            else if (rand == 1)
             {
                 GameObject health = Instantiate(healthBottle, transform.position, transform.rotation);
 
@@ -75,6 +78,14 @@ public class BreakBarrel : MonoBehaviour
                 rb = health.GetComponent<Rigidbody2D>();
 
                 rb.AddForce(transform.up * (r * .6f));
+
+                //gameObject.SetActive(false);                          //////////////////////////////////
+                StartCoroutine("SetActiveFalse");
+            }
+            else
+            {
+                //gameObject.SetActive(false);                          //////////////////////////////////
+                StartCoroutine("SetActiveFalse");
             }
 
             /*Destroy(p1, 2f);
@@ -100,6 +111,16 @@ public class BreakBarrel : MonoBehaviour
             rb.AddForce(transform.up * (r * .6f));
             rb2.AddForce(transform.right * (r * .6f));
             rb3.AddForce(transform.right * (-r * .6f));
+
+            //gameObject.SetActive(false);                          //////////////////////////////////
+            StartCoroutine("SetActiveFalse");
+
         }
+    }
+
+    IEnumerator SetActiveFalse()
+    {
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
     }
 }

@@ -48,6 +48,8 @@ public class BreakLamp : MonoBehaviour
             Destroy(p3, 2f);
             Destroy(p4, 2f);
             Destroy(p5, 2f);*/
+
+            StartCoroutine("SetActiveFalse");
         }
 
         else if (collision.gameObject.CompareTag("ChaseMonster"))
@@ -67,6 +69,14 @@ public class BreakLamp : MonoBehaviour
             rb.AddForce(transform.up * (r * .6f));
             rb2.AddForce(transform.right * (r * .6f));
             rb3.AddForce(transform.right * (-r * .6f));
+
+            StartCoroutine("SetActiveFalse");
         }
+    }
+
+    IEnumerator SetActiveFalse()
+    {
+        yield return new WaitForSeconds(1.2f);
+        gameObject.SetActive(false);
     }
 }
