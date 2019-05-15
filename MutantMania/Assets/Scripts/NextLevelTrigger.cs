@@ -9,7 +9,14 @@ public class NextLevelTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("TownMap");
+            TransitionAnimForest.forestTran = true;
+            StartCoroutine("nextLevel");
         }
+    }
+
+    IEnumerator nextLevel()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("TownMap");
     }
 }

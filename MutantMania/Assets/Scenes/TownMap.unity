@@ -22141,6 +22141,7 @@ MonoBehaviour:
   swordSwing2: {fileID: 8300000, guid: 37535eec180df6d4b9eefa1d9cd14273, type: 3}
   swordSwing3: {fileID: 8300000, guid: d38ce7f1d8ee0b6469331e216dda6f33, type: 3}
   wand: {fileID: 8300000, guid: 4bb27c472c3eb324fbfc42dcb6788c8c, type: 3}
+  pillar: {fileID: 0}
 --- !u!82 &546730959
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22484,6 +22485,21 @@ Prefab:
     - target: {fileID: 4082744237938676, guid: 8eb86bc42d89011468a1bbef97db3f44, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212752708697288022, guid: 8eb86bc42d89011468a1bbef97db3f44,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 212388482515609362, guid: 8eb86bc42d89011468a1bbef97db3f44,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 212852361072219768, guid: 8eb86bc42d89011468a1bbef97db3f44,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eb86bc42d89011468a1bbef97db3f44, type: 2}

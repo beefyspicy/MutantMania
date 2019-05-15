@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour {
     public static bool playHealth;
     public static bool playSword;
     public static bool playWand;
+    public static bool playPillar;
 
     AudioSource audioSource;
     public AudioClip bgm;
@@ -33,6 +34,7 @@ public class AudioManager : MonoBehaviour {
     public AudioClip swordSwing2;
     public AudioClip swordSwing3;
     public AudioClip wand;
+    public AudioClip pillar;
 
     void Start ()
     {
@@ -131,6 +133,12 @@ public class AudioManager : MonoBehaviour {
         {
             audioSource.PlayOneShot(wand, .5f);
             playWand = false;
+        }
+
+        if (playPillar)
+        {
+            audioSource.PlayOneShot(pillar, .5f);
+            playPillar = false;
         }
     }
 }

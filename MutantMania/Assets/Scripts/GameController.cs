@@ -52,7 +52,8 @@ public class GameController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Joystick1Button9))
         {
-            SceneManager.LoadScene("MenuFinal");
+            TransitionAnimForest.forestTran = true;
+            StartCoroutine("menu");
         }
 
         //death
@@ -119,5 +120,11 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(1f);
         Application.Quit();
         //SceneManager.LoadScene("MenuFinal");
+    }
+
+    IEnumerator menu()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("MenuFinal");
     }
 }

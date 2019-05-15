@@ -96,6 +96,9 @@ public class BreakBarrel : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("ChaseMonster"))
         {
+
+            AudioManager.playBarrel = true;
+
             barrel.SetActive(false);
 
             p1.SetActive(true);

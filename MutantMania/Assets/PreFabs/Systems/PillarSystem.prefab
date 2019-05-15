@@ -71,8 +71,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4992441023335214}
-  - component: {fileID: 114381599489694882}
   - component: {fileID: 61053566827943914}
+  - component: {fileID: 114936059892066434}
   m_Layer: 0
   m_Name: PillarSystem
   m_TagString: Untagged
@@ -252,21 +252,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.084595, y: 28.098244}
   m_EdgeRadius: 0
---- !u!114 &114381599489694882
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1637973177344976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e0c53fe02ab5be4eb985c5e2728e856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lamp: {fileID: 1104535681155736}
-  p1: {fileID: 1002582729674442}
-  p2: {fileID: 1315902913361040}
-  p3: {fileID: 1946534519280450}
 --- !u!114 &114391153619088488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,6 +291,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downForce: -50
   lowForce: -50
+--- !u!114 &114936059892066434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637973177344976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab48b5e2b70e0a4459eb48e1bf11cbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lamp: {fileID: 1104535681155736}
+  p1: {fileID: 1002582729674442}
+  p2: {fileID: 1315902913361040}
+  p3: {fileID: 1946534519280450}
 --- !u!212 &212265912218235614
 SpriteRenderer:
   m_ObjectHideFlags: 1

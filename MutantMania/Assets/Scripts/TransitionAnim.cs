@@ -18,6 +18,7 @@ public class TransitionAnim : MonoBehaviour {
         if (tran)
         {
             anim.SetTrigger("fadeOut");
+            tran = false;
         }
     }
 }
