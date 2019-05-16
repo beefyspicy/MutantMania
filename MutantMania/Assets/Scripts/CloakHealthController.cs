@@ -16,6 +16,7 @@ public class CloakHealthController : MonoBehaviour {
 
     private void Start()
     {
+        health = 3;
         rb = GetComponent<Rigidbody2D>();
     }
 

@@ -37,9 +37,9 @@ public class ChestController : MonoBehaviour {
             {
                 if (!newText)
                 {
-                    chestText.text = "[F] to open chest";
+                    chestText.text = "[Circle] to open chest";
                 }
-                if (Input.GetKey(KeyCode.F))
+                if (Input.GetKey(KeyCode.F) || Input.GetKeyDown(KeyCode.Joystick1Button2))
                 {
                     Debug.Log("chest opened");
                     //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
@@ -48,18 +48,18 @@ public class ChestController : MonoBehaviour {
                     ninjaStar.SetActive(true);
                     //Instantiate(chestfx, transform.position, transform.rotation);
                 }
-                else if (Input.GetKey(KeyCode.E))
+                /*else if (Input.GetKey(KeyCode.E))
                 {
                     SceneManager.LoadScene("Dungeon");
-                }
+                }*/
             }
             if (rand == 1)
             {
                 if (!newText)
                 {
-                    chestText.text = "[F] to open chest";
+                    chestText.text = "[Circle] to open chest";
                 }
-                if (Input.GetKey(KeyCode.F))
+                if (Input.GetKey(KeyCode.F) || Input.GetKeyDown(KeyCode.Joystick1Button2))
                 {
                     Debug.Log("chest opened");
                     //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
@@ -68,18 +68,18 @@ public class ChestController : MonoBehaviour {
                     helmet.SetActive(true);
                     //Instantiate(chestfx, transform.position, transform.rotation);
                 }
-                else if (Input.GetKey(KeyCode.E))
+                /*else if (Input.GetKey(KeyCode.E))
                 {
                     SceneManager.LoadScene("Dungeon");
-                }
+                }*/
             }
             if (rand == 2)
             {
                 if (!newText)
                 {
-                    chestText.text = "[F] to open chest";
+                    chestText.text = "[Circle] to open chest";
                 }
-                if (Input.GetKey(KeyCode.F))
+                if (Input.GetKey(KeyCode.F) || Input.GetKeyDown(KeyCode.Joystick1Button2))
                 {
                     Debug.Log("chest opened");
                     //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
@@ -88,10 +88,10 @@ public class ChestController : MonoBehaviour {
                     cuirass.SetActive(true);
                     //Instantiate(chestfx, transform.position, transform.rotation);
                 }
-                else if (Input.GetKey(KeyCode.E))
+                /*else if (Input.GetKey(KeyCode.E))
                 {
                     SceneManager.LoadScene("Dungeon");
-                }
+                }*/
             }
         }
     }

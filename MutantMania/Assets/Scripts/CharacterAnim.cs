@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterAnim : MonoBehaviour {
 
@@ -27,11 +28,13 @@ public class CharacterAnim : MonoBehaviour {
 
     void Update()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
         //attack = false; ///////////
 
         //int r = Random.Range(0, 5);
 
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || PlayerController.moveHorizontal < 0 || PlayerController.moveHorizontal > 0)
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || PlayerController.moveHorizontal < 0 || PlayerController.moveHorizontal > 0)
         {
             anim.SetBool("isRunning", true);
         }
@@ -74,7 +77,7 @@ public class CharacterAnim : MonoBehaviour {
                 swordTrail2.SetActive(false);
                 swordTrail3.SetActive(false);
             }
-            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Joystick1Button2))  // && ChestController.ninjaStar.activeSelf)
+            if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Joystick1Button2)) && sceneName == "TownMap")  // && ChestController.ninjaStar.activeSelf)
             {
                 attack = true;
                 anim.SetTrigger("ninjaThrow");

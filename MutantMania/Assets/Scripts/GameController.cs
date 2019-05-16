@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour {
         //death
         if (!player.activeSelf)
         {
-            deathText.text = "Press [R] to restart or [ESC] to quit";
+            deathText.text = "Press [Touch Pad] to restart or [Home Button] to quit";
         }
 
 
@@ -82,7 +82,7 @@ public class GameController : MonoBehaviour {
         //mana += CoinPickup.mana;
 
         //level up
-        levelSlider.maxValue = 300;
+        levelSlider.maxValue = 600;
         //levelSlider.value = (CoinPickup.coins * 2);
         levelSlider.value = (PlayerAttack.score * 2);
 
@@ -103,9 +103,17 @@ public class GameController : MonoBehaviour {
         {
             level = 4;
         }
-        else if (levelSlider.value >= 300)
+        else if (levelSlider.value >= 300 && levelSlider.value < 400)
         {
             level = 5;
+        }
+        else if (levelSlider.value >= 400 && levelSlider.value < 500)
+        {
+            level = 6;
+        }
+        else if (levelSlider.value >= 500 && levelSlider.value < 600)
+        {
+            level = 7;
         }
     }
 

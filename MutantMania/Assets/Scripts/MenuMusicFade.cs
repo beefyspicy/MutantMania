@@ -18,6 +18,7 @@ public class MenuMusicFade : MonoBehaviour {
         if (musicFade)
         {
             anim.SetTrigger("fadeMusic");
+            musicFade = false;
         }
     }
 }

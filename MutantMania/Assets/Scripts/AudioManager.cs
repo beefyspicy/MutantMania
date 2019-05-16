@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour {
     public static bool playPillar;
 
     AudioSource audioSource;
-    public AudioClip bgm;
+    //public AudioClip bgm;
     public AudioClip squish;
     public AudioClip enemySquish;
     public AudioClip enemyHit;
@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         //playSquish = false;
 
-        audioSource.PlayOneShot(bgm, .18f);
+        //audioSource.PlayOneShot(bgm, .18f);
     }
 
     void Update ()

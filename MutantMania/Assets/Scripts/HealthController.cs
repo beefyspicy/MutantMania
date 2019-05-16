@@ -59,6 +59,8 @@ public class HealthController : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Sword") && CharacterAnim.attack == true)
         {
+            PlayerAttack.score += 5;   ///////////////////////////////
+
             AudioManager.playEnemyHit = true;
 
             Instantiate(bloodfx, transform.position, transform.rotation);
