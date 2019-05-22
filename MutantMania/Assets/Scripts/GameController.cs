@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour {
     public Text coinText;
     public Text levelText;
 
+    //public GameObject startMenu;   ////////
+
     public Slider healthSlider;
     public Slider magicSlider;
     public Slider levelSlider;
@@ -25,6 +27,8 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        Cursor.visible = false;
+
         CoinPickup.coins = 0;
 
         deathText.text = "";
@@ -54,17 +58,18 @@ public class GameController : MonoBehaviour {
         {
             TransitionAnimForest.forestTran = true;
             StartCoroutine("menu");
+            //startMenu.SetActive(true);     /////////////////
         }
 
         //death
         if (!player.activeSelf)
         {
-            deathText.text = "Press [Touch Pad] to restart or [Home Button] to quit";
+            deathText.text = "PRESS [TOUCH PAD] TO RESTART OR [HOME BUTTON] TO QUIT";
         }
 
 
         //score
-        coinText.text = "Coins: " + CoinPickup.coins;
+        coinText.text = "COINS: " + CoinPickup.coins;
 
         //health slider
         healthSlider.maxValue = 8;  //does not actually cap the maximum value for some reason
@@ -86,7 +91,7 @@ public class GameController : MonoBehaviour {
         //levelSlider.value = (CoinPickup.coins * 2);
         levelSlider.value = (PlayerAttack.score * 2);
 
-        levelText.text = "Level " + level;
+        levelText.text = "LEVEL " + level;
         if (levelSlider.value < 50)
         {
             level = 1;

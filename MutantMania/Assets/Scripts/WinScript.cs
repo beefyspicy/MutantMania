@@ -23,7 +23,7 @@ public class WinScript : MonoBehaviour {
 
     IEnumerator win()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7.5f);
         SceneManager.LoadScene("MenuFinal");
     }
 }

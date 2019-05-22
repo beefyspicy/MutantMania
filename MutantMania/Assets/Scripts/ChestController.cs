@@ -37,13 +37,13 @@ public class ChestController : MonoBehaviour {
             {
                 if (!newText)
                 {
-                    chestText.text = "[Circle] to open chest";
+                    chestText.text = "[CIRCLE] TO OPEN CHEST";
                 }
                 if (Input.GetKey(KeyCode.F) || Input.GetKeyDown(KeyCode.Joystick1Button2))
                 {
                     Debug.Log("chest opened");
                     //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
-                    chestText.text = "You have found a throwing star!";
+                    chestText.text = "YOU HAVE FOUND A THROWING STAR!";
                     newText = true;
                     ninjaStar.SetActive(true);
                     //Instantiate(chestfx, transform.position, transform.rotation);
@@ -57,13 +57,13 @@ public class ChestController : MonoBehaviour {
             {
                 if (!newText)
                 {
-                    chestText.text = "[Circle] to open chest";
+                    chestText.text = "[CIRCLE] TO OPEN CHEST";
                 }
                 if (Input.GetKey(KeyCode.F) || Input.GetKeyDown(KeyCode.Joystick1Button2))
                 {
                     Debug.Log("chest opened");
                     //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
-                    chestText.text = "You have found a helmet!";
+                    chestText.text = "YOU HAVE FOUND A HELMET!";
                     newText = true;
                     helmet.SetActive(true);
                     //Instantiate(chestfx, transform.position, transform.rotation);
@@ -77,13 +77,13 @@ public class ChestController : MonoBehaviour {
             {
                 if (!newText)
                 {
-                    chestText.text = "[Circle] to open chest";
+                    chestText.text = "[CIRCLE] TO OPEN CHEST";
                 }
                 if (Input.GetKey(KeyCode.F) || Input.GetKeyDown(KeyCode.Joystick1Button2))
                 {
                     Debug.Log("chest opened");
                     //chestText.text = @"Nothing in there... ¯\_(ツ)_/¯";
-                    chestText.text = "You have found a cuirass!";
+                    chestText.text = "YOU HAVE FOUND A CUIRASS";
                     newText = true;
                     cuirass.SetActive(true);
                     //Instantiate(chestfx, transform.position, transform.rotation);

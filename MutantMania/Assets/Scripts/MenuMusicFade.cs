@@ -8,9 +8,13 @@ public class MenuMusicFade : MonoBehaviour {
 
     private Animator anim;
 
+    //AudioSource audioSource;
+    //public AudioClip squish;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -21,4 +25,12 @@ public class MenuMusicFade : MonoBehaviour {
             musicFade = false;
         }
     }
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ChaseMonster"))
+        {
+            audioSource.PlayOneShot(squish, .7f);
+        }
+    }*/
 }
